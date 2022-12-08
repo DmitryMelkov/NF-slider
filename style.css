@@ -92,7 +92,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 .own-intro__btns {
@@ -104,12 +103,14 @@
   left: 0;
   z-index: 111;
   transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .own-intro__btn-prev,
 .own-intro__btn-next {
   position: static;
   margin-top: 0;
+  pointer-events: all;
 }
 
 .own-intro__swiper .swiper-pagination {
@@ -119,7 +120,7 @@
 .own-intro__swiper .swiper-pagination-bullet {
   width: 26px;
   height: 4px;
-  background-color: #A65CF0;
+  background-color: #a65cf0;
   border-radius: unset;
 }
 
@@ -145,7 +146,6 @@
   height: auto;
   min-height: 300px;
 }
-
 
 @media (max-width: 1250px) {
   .own-intro__swiper-title {
