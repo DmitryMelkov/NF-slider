@@ -1,0 +1,276 @@
+@import "_variables";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Mont", sans-serif;
+}
+
+p {
+  font-size: 22px;
+  line-height: 34px;
+  font-weight: 600;
+  color: $colorBlack;
+  font-family: "Mont", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  list-style-type: none;
+  font-family: "Mont", sans-serif;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  font-weight: 800;
+  font-family: "Mont", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Mont", sans-serif;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 58.79px;
+  font-weight: 800;
+  color: $colorBlack;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 58.79px;
+  font-weight: 800;
+  color: $colorBlack;
+}
+
+h3 {
+  color: $colorBlack;
+}
+
+th,
+td {
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.title-reset {
+  margin: 0;
+}
+
+.descr-reset {
+  margin: 0;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.btn-reset {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+}
+
+.content-btn {
+  position: relative;
+  padding: 17px 42px 22px 35px;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 800;
+  color: $colorWhite;
+
+  background-image: linear-gradient(90.45deg, #d722ff 0.39%, #9a32ef 102.83%);
+  background-color: transparent;
+  background-size: 100%;
+  border-radius: 12px;
+  border: 2px solid $colorPurple;
+
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.content-btn::before {
+  border-radius: 12px;
+  background-image: linear-gradient(90.45deg, #d100ff 0.39%, #8908f2 102.83%);
+  border: 2px solid $colorPurpleActive;
+  box-shadow: 0px 2px 23px 1px rgba(183, 43, 246, 0.5);
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  opacity: 0;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.careers__descr {
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 700;
+  font-family: "Cabin", serif;
+  color: $colorPurple;
+  text-transform: uppercase;
+}
+
+.careers__descr-p {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.contacts__descr {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.partnership__descr {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next.swiper-button-disabled .special-offers__button-next-svg,
+.swiper-button-prev.swiper-button-disabled .special-offers__button-prev-svg {
+  border-color: $colorGrey;
+  color: $colorGrey;
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 1;
+}
+
+body::-webkit-scrollbar {
+  width: 7px; /* ширина scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: $colorGreyLight; /* цвет дорожки */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $colorPurple; /* цвет плашки */
+  border-radius: 20px; /* закругления плашки */
+}
+
+// import swiper
+@import "../../node_modules/swiper/swiper.scss";
+@import "../../node_modules/swiper/modules/pagination/pagination.scss";
+@import "../../node_modules/swiper/modules/navigation/navigation.scss";
+
+//tooltip
+@import "../../node_modules/tippy.js/dist/tippy";
+@import "../../node_modules/tippy.js/animations/scale";
+
+@media (min-width: 1024px) {
+  .content-btn:hover:not(:active):before {
+    opacity: 1;
+  }
+}
+
+//active, focus
+.content-btn:active {
+  background-image: linear-gradient(90.45deg, #4e0b5e 0.39%, #8908f2 102.83%);
+  border: 2px solid $colorPurpleActive;
+}
+
+.content-btn:focus-visible:not(:active) {
+  background-image: linear-gradient(90.45deg, #c342e4 0.39%, #8908f2 102.83%);
+  border: 2px solid $colorPurpleActive;
+  outline: none;
+}
+
+@media (max-width: 1024px) {
+  h1,
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .container {
+    max-width: 952px;
+  }
+}
+
+@media (max-width: 800px) {
+  h1,
+  h2 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
