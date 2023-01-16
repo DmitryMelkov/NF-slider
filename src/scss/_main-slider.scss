@@ -11,14 +11,25 @@
   margin-right: 30px;
 }
 
-.main__swiper-1, .main__swiper-2 {
-  transition: color .3s ease-in-out;
+.main__swiper-1,
+.main__swiper-2 {
+  transition: color 0.3s ease-in-out;
 }
 
 .main__btn-next,
 .main__btn-prev {
-  width: 60px;
-  height: 60px;
+  // width: 60px;
+  // height: 60px;
+
+  color: $colorWhite;
+  font-size: 38px;
+  font-weight: 100;
+  width: 50px;
+  height: 50px;
+  background-image: linear-gradient(to right, #da22ff 0%, #9733ee 51%, #da22ff 100%);
+  border-radius: 50%;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
 }
 
 .main__btn-prev {
@@ -29,21 +40,11 @@
   margin-right: 20px;
 }
 
-// .main__btn-next-svg,
-// .main__btn-prev-svg {
-//   width: 20px;
-//   height: 20px;
-//   color: black;
-// }
+
 
 .main__btn-span {
-  font-size: 180px;
-  line-height: 180px;
-  font-weight: 500;
-  font-family: "IBMPlexSans", sans-serif;
-  color: rgba(255, 255, 255, 0);
-  margin-left: 10px;
-  transition: color 0.3s ease-in-out;
+  height: 5px;
+  line-height: 1px;
 }
 
 .main__swiper-img {
@@ -299,15 +300,20 @@
       color: $colorGrey;
     }
   }
-  .main__swiper-1:hover .main__btn-span,
-  .main__swiper-2:hover .main__btn-span {
-    color: rgba(255, 255, 255, 0.5);
+  .main__swiper-1:hover .main__btn-next,
+  .main__swiper-1:hover .main__btn-prev,
+  .main__swiper-2:hover .main__btn-next,
+  .main__swiper-2:hover .main__btn-prev {
+    // color: rgba(255, 255, 255, 0.5);
+    opacity: 0.7;
   }
-  .main__swiper-1:hover .main__btn-span:hover,
-  .main__swiper-2:hover .main__btn-span:hover {
-    color: rgba(255, 255, 255, 1);
+  .main__swiper-1:hover .main__btn-next:hover,
+  .main__swiper-1:hover .main__btn-prev:hover,
+  .main__swiper-2:hover .main__btn-next:hover,
+  .main__swiper-2:hover .main__btn-prev:hover {
+    // color: rgba(255, 255, 255, 1);
+    opacity: 1;
   }
-
 }
 
 //active
@@ -338,6 +344,13 @@
       font-size: 14px;
       line-height: 18px;
     }
+  }
+}
+
+@media (max-width: 1023px) {
+  .main__btn-next,
+  .main__btn-prev {
+    opacity: 1;
   }
 }
 

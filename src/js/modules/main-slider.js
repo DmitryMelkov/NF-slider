@@ -3,13 +3,12 @@ import Swiper, { Pagination, Navigation, Autoplay } from 'swiper';
 export function mainSlider() {
   var swiper1 = new Swiper('.main__swiper-1', {
     modules: [Pagination, Navigation, Autoplay],
-    // loop: true,
-    // slidesPerView: 'auto',
-
-    // autoplay: {
-    //   delay: 1000,
-    //   disableOnInteraction: false,
-    // },
+    loop: true,
+    slidesPerView: 'auto',
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+    },
     slideToClickedSlide: true,
     speed: 500,
 
@@ -24,13 +23,12 @@ export function mainSlider() {
 
   var swiper2 = new Swiper('.main__swiper-2', {
     modules: [Pagination, Navigation, Autoplay],
-    // loop: true,
-    // slidesPerView: 'auto',
-
-    // autoplay: {
-    //   delay: 1000,
-    //   disableOnInteraction: false,
-    // },
+    loop: true,
+    slidesPerView: 'auto',
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+    },
     slideToClickedSlide: true,
     speed: 500,
 
@@ -87,13 +85,26 @@ export function mainSlider() {
     });
   }
 
-  let sliderContent1 = document.querySelector('.swiper');
+  const linkItems = document.querySelectorAll('.tab__item');
 
-  let imgContent1 = document.querySelector('.main__swiper-img-content');
-  let sliderBtns1 = document.querySelectorAll('.main__btns-js');
+  linkItems.forEach((item) => {
+    item.addEventListener('mouseover', function () {
+      swiper1.autoplay.stop();
+      swiper2.autoplay.stop();
+    });
+    item.addEventListener('mouseout', function () {
+      swiper1.autoplay.start();
+      swiper2.autoplay.start();
+    });
+  });
 
-  let textContent1 = document.querySelector('.main__swiper-content');
-  let sliderPagination1 = document.querySelectorAll('.main__pagination-js');
+  const sliderContent1 = document.querySelector('.main__swiper-slide');
+
+  const imgContent1 = document.querySelector('.main__swiper-img-content');
+  const sliderBtns1 = document.querySelectorAll('.main__btns-js');
+
+  const textContent1 = document.querySelector('.main__swiper-content');
+  const sliderPagination1 = document.querySelectorAll('.main__pagination-js');
 
   console.log(sliderContent1.offsetHeight);
   console.log(imgContent1.offsetHeight);
