@@ -85,8 +85,8 @@ export function mainSlider() {
     });
   }
 
-  const linkItems = document.querySelectorAll('.tab__item');
-
+  const linkItems = document.querySelectorAll('.tab__item, .main__swiper-1, .main__swiper-2');
+  
   linkItems.forEach((item) => {
     item.addEventListener('mouseover', function () {
       swiper1.autoplay.stop();
