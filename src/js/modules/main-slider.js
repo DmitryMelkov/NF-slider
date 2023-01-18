@@ -85,8 +85,8 @@ export function mainSlider() {
     });
   }
 
-  const linkItems = document.querySelectorAll('.tab__item, .main__swiper-1, .main__swiper-2');
-  
+  const linkItems = document.querySelectorAll('.tab__item, .main__swiper-1, .main__swiper-2, .tab__nav-btn');
+
   linkItems.forEach((item) => {
     item.addEventListener('mouseover', function () {
       swiper1.autoplay.stop();
@@ -105,10 +105,6 @@ export function mainSlider() {
 
   const textContent1 = document.querySelector('.main__swiper-content');
   const sliderPagination1 = document.querySelectorAll('.main__pagination-js');
-
-  console.log(sliderContent1.offsetHeight);
-  console.log(imgContent1.offsetHeight);
-  console.log(textContent1.offsetHeight);
 
   const sliderBtnHeight = (sliderContent, imgContent, sliderBtns, textContent, sliderPagination) => {
     if ((sliderContent, imgContent, textContent)) {
