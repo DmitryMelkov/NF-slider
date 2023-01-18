@@ -5,10 +5,10 @@ export function mainSlider() {
     modules: [Pagination, Navigation, Autoplay],
     loop: true,
     slidesPerView: 'auto',
-    autoplay: {
-      delay: 1000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 1000,
+    //   disableOnInteraction: false,
+    // },
     slideToClickedSlide: true,
     speed: 500,
 

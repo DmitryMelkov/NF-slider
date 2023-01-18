@@ -1212,6 +1212,12 @@ button.swiper-pagination-bullet {
   font-weight: 400;
   line-height: 20px;
   color: #1e2329;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .items-wrap {
@@ -1484,14 +1490,30 @@ button.swiper-pagination-bullet {
 }
 
 .tab__img-span {
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 1;
   font-weight: 600;
   color: #353535;
 }
 
 .ticker__item:active .ticker__span {
   color: #b72bf6;
+}
+
+.tab__item:active {
+  background-color: #ededed;
+  border-radius: 8px;
+}
+
+.tab__img-span:active {
+  opacity: 0.9;
+}
+
+.main__swiper-1:hover .main__btn-next:active,
+.main__swiper-1:hover .main__btn-prev:active,
+.main__swiper-2:hover .main__btn-next:active,
+.main__swiper-2:hover .main__btn-prev:active {
+  opacity: 0.5;
 }
 
 @media (min-width: 1024px) {
@@ -1523,12 +1545,6 @@ button.swiper-pagination-bullet {
   }
 }
 
-@media (max-width: 1550px) {
-  .tab__img-span {
-    font-size: 20px;
-  }
-}
-
 @media (max-width: 1250px) {
   .main__swiper-title {
     font-size: 24px;
@@ -1539,7 +1555,6 @@ button.swiper-pagination-bullet {
 @media (max-width: 1100px) {
   .tab__img-span {
     font-size: 14px;
-    line-height: 18px;
   }
 }
 
